@@ -19,12 +19,25 @@ public class MyLinkedList
         return false;
     }// end isEmpty()
 
-    /* 
-     * public String toString(){
-        //to be added to later...
-    }//end toString()
-     * 
-     */
+
+    public String toString() {
+        int position = 0;
+        ListNode temp = head;
+        String end = "";
+        while (temp.getValue() != null){
+            String now = (String) temp.getValue(); 
+            end = position + ": " + now; 
+            if(temp.getNext() == null){
+                return end; 
+            }//end if
+            position++;
+            temp = temp.getNext();
+        }//end while
+        return end; 
+    }//end while
+        
+
+     
     
     public boolean addFirst(Object newItem){
         ListNode front = (ListNode) newItem;
@@ -51,6 +64,7 @@ public class MyLinkedList
             else
                 temp = temp.getNext();
         }//end while loop
+    return true; 
     }//end add()
     
     

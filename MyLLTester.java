@@ -4,8 +4,8 @@ public class MyLLTester
   public static void main(String [] args)
   {
     MyLinkedList apple = new MyLinkedList(); 
-    apple.addFirst(2);
-    System.out.println(apple.getValue());
+    apple.add(2);
+    apple.toString();
 
 
   } // end main
