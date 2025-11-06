@@ -5,7 +5,7 @@ public class MyLinkedList
     private ListNode head;
     private int size; 
     public MyLinkedList(){
-        head = null; 
+        head = new ListNode (null,null);
         size = 0; 
     }//end constructor
 
@@ -19,8 +19,8 @@ public class MyLinkedList
         return false;
     }// end isEmpty()
 
-
-    public String toString() {
+    /*
+     * public String toString() {
         int position = 0;
         ListNode temp = head;
         String end = "";
@@ -35,21 +35,27 @@ public class MyLinkedList
         }//end while
         return end; 
     }//end while
-        
-
-     
+     */
+    
     
     public boolean addFirst(Object newItem){
-        ListNode front = (ListNode) newItem;
-        front.setNext(head);
-        head = front; 
-        size++;
-        return true; 
+        if(head == null){
+            head.setValue(newItem);
+            return true;
+        }//end if
+        else {
+            ListNode copy = new ListNode (head, head.getNext()); 
+            copy.setNext(head);
+            copy.setValue(newItem);
+            head = copy; 
+            size++;
+            return true;  
+        }//end else
     }//end addFirst()
 
 
-    
-     public boolean add(Object newItem){
+    /*
+     * public boolean add(Object newItem){
         ListNode temp = head; 
         if(temp.getValue()==null){
             addFirst(newItem);
@@ -66,6 +72,8 @@ public class MyLinkedList
         }//end while loop
     return true; 
     }//end add()
+     */
+     
     
     
 } //end class
