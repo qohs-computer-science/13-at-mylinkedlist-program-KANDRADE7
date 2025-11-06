@@ -19,7 +19,7 @@ public class MyLinkedList
         return false;
     }// end isEmpty()
 
-    /*
+    /* 
      * public String toString() {
         int position = 0;
         ListNode temp = head;
@@ -38,9 +38,12 @@ public class MyLinkedList
      */
     
     
+    
+    
     public boolean addFirst(Object newItem){
         if(head == null){
             head.setValue(newItem);
+            size++;
             return true;
         }//end if
         else {

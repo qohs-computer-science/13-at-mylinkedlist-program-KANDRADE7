@@ -4,10 +4,10 @@ public class MyLLTester
   public static void main(String [] args)
   {
     MyLinkedList apple = new MyLinkedList(); 
-    apple.isEmpty();
+    System.out.println(apple.isEmpty());
     apple.addFirst(2);
-    apple.isEmpty();
-
+    System.out.println(apple.isEmpty()); 
+    apple.toString();
 
   } // end main
 }//end 
