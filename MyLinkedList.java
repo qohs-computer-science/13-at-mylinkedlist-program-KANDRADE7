@@ -19,14 +19,13 @@ public class MyLinkedList
         return false;
     }// end isEmpty()
 
-    /* 
-     * public String toString() {
+    //fix toString so it prints multiple indices and prints the actual value 
+    public String toString() {
         int position = 0;
-        ListNode temp = head;
+        ListNode temp = new ListNode((head.getValue()), head.getNext());
         String end = "";
-        while (temp.getValue() != null){
-            String now = (String) temp.getValue(); 
-            end = position + ": " + now; 
+        while (temp != null){
+            end = position + ": " + temp; 
             if(temp.getNext() == null){
                 return end; 
             }//end if
@@ -35,7 +34,6 @@ public class MyLinkedList
         }//end while
         return end; 
     }//end while
-     */
     
     
     
@@ -47,10 +45,8 @@ public class MyLinkedList
             return true;
         }//end if
         else {
-            ListNode copy = new ListNode (head, head.getNext()); 
-            copy.setNext(head);
-            copy.setValue(newItem);
-            head = copy; 
+            ListNode updated = new ListNode (newItem, head); 
+            head.setValue(updated); 
             size++;
             return true;  
         }//end else
