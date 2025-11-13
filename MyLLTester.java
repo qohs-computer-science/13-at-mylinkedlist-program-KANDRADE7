@@ -3,6 +3,7 @@ public class MyLLTester
 {
   public static void main(String [] args)
   {
+    //testing part 1!
     MyLinkedList apple = new MyLinkedList(); 
     System.out.println(apple.isEmpty());
     apple.addFirst(4);
@@ -30,6 +31,11 @@ public class MyLLTester
     System.out.println(apple.toString());
 
 
+    apple.removeFirst();
+    System.out.println(apple.toString());
+
+    apple.remove(1);
+    System.out.println(apple.toString());
   } // end main
 }//end 
   

@@ -103,4 +103,67 @@ public class MyLinkedList
         }//end else
     }//end get()
     
+
+    //removes the ListNode element at the given position leaving the rest of the LinkedList intact
+    public Object remove(int i){
+        if(i<0 || i>=size)
+            throw new IndexOutOfBoundsException();
+        if(i==0)
+            return removeFirst();
+
+        ListNode temp= head;
+        ListNode before = null;
+        int index =0;
+
+        while((temp!=null) && (temp.getNext()!=null) && (index < i)){
+            before = temp;
+            temp = temp.getNext();
+            index++;
+        }//end while loop
+        
+        Object storedVal = temp.getValue();
+        //adjust connections
+        before.setNext(temp.getNext());
+        temp.setNext(null);
+        size--;
+        return storedVal;
+    }//end remove()
+
+
+
+    //removes the ListNode element at the beginning of the LinkedList and returns the value of the node
+    public Object removeFirst(){
+        if(head == null)
+            return null;
+        else{
+            Object hotChocolate = head.getValue();
+            head = head.getNext();
+            size--;
+            return hotChocolate; 
+        }//end else
+    }//end removeFirst()
+
+
+
+    //removes the ListNode element at the end of the LinkedList and returns the value of the node
+    public Object removeLast(){
+        if(head == null)
+            return null; 
+        
+        if(head.getNext() == null){
+            Object gift = head.getValue();
+            head = null;
+            return gift;
+        }//end if
+
+        ListNode temp = head;
+        while(temp.getNext()!= null){
+            temp=temp.getNext();
+        }//end while loop
+
+        Object pumpkin = temp.getValue();
+        temp=null;
+        return pumpkin;
+    }//end removeLast()
+
 } //end class
