@@ -69,6 +69,38 @@ public class MyLinkedList
         return true;
     }//end addLast()
      
-    
+
+    // changes the information stored as the value of the ListNode element at the given position
+    public Object set(int i, Object obj){
+        int index =0;
+        if(i<0 || i>=size)
+            throw new IndexOutOfBoundsException();
+        
+        ListNode temp = head;
+        while((temp != null) && (temp.getNext()!= null) && (index<i)){
+            temp = temp.getNext();
+            index++;
+        }//end while loop
+
+        Object sugarCookie = temp.getValue();
+        temp.setValue(obj);
+        return sugarCookie; 
+    }//end set()
+
+
+    //returns the information stored as the value of the ListNode element at a given position
+    public Object get(int i){
+        int index = 0;
+        if((i<0) || (i>=size))
+            throw new IndexOutOfBoundsException(); 
+        else{
+            ListNode temp = head;
+            while((temp.getNext()!=null) && (index<i)){
+                temp=temp.getNext(); 
+                index++;
+            }//end while loop
+            return temp.getValue();
+        }//end else
+    }//end get()
     
 } //end class
