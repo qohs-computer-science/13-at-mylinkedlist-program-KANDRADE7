@@ -36,6 +36,7 @@ public class MyLLTester
 
     apple.remove(1);
     System.out.println(apple.toString());
+    System.out.println("work on testing part 3 and tester file");
   } // end main
 }//end 
   

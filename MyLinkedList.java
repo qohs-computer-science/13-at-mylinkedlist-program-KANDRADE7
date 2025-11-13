@@ -34,8 +34,7 @@ public class MyLinkedList
             temp = temp.getNext();
         }//end while
         return end; 
-    }//end while
-    
+    }//end while 
 
     //adds a ListNode element to the beginning of the LinkedList
     public boolean addFirst(Object newItem){
@@ -44,7 +43,6 @@ public class MyLinkedList
         size++;
         return true;  
     }//end addFirst()
-
 
     //adds a ListNode element to the end of the LinkedList, always returns true.
     public boolean add(Object newItem){
@@ -67,8 +65,7 @@ public class MyLinkedList
     public boolean addLast(Object obj){
         add(obj); 
         return true;
-    }//end addLast()
-     
+    }//end addLast() 
 
     // changes the information stored as the value of the ListNode element at the given position
     public Object set(int i, Object obj){
@@ -87,7 +84,6 @@ public class MyLinkedList
         return sugarCookie; 
     }//end set()
 
-
     //returns the information stored as the value of the ListNode element at a given position
     public Object get(int i){
         int index = 0;
@@ -103,7 +99,6 @@ public class MyLinkedList
         }//end else
     }//end get()
     
-
     //removes the ListNode element at the given position leaving the rest of the LinkedList intact
     public Object remove(int i){
         if(i<0 || i>=size)
@@ -141,8 +136,6 @@ public class MyLinkedList
         }//end else
     }//end removeFirst()
 
-
-
     //removes the ListNode element at the end of the LinkedList and returns the value of the node
     public Object removeLast(){
         if(head == null)
@@ -154,7 +147,7 @@ public class MyLinkedList
             size--; 
             return gift;
         }//end if
-
+ 
         ListNode temp = head;
         while(temp.getNext()!= null){
             temp=temp.getNext();
