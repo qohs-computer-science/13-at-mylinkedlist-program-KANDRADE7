@@ -4,8 +4,9 @@ public class MyLinkedList
 //fields
     private ListNode head;
     private int size; 
+
     public MyLinkedList(){
-        head = new ListNode (null,null);
+        head = null;
         size = 0; 
     }//end constructor
 
@@ -19,13 +20,13 @@ public class MyLinkedList
         return false;
     }// end isEmpty()
 
-    //fix toString so it prints multiple indices and prints the actual value 
     public String toString() {
         int position = 0;
-        ListNode temp = new ListNode((head.getValue()), head.getNext());
+        ListNode temp = head;
         String end = "";
+
         while (temp != null){
-            end = position + ": " + temp; 
+            end += position + ": " + (temp.getValue()) + "\n"; 
             if(temp.getNext() == null){
                 return end; 
             }//end if
@@ -35,43 +36,38 @@ public class MyLinkedList
         return end; 
     }//end while
     
-    
-    
-    
+
+    //adds a ListNode element to the beginning of the LinkedList
     public boolean addFirst(Object newItem){
-        if(head == null){
-            head.setValue(newItem);
-            size++;
-            return true;
-        }//end if
-        else {
-            ListNode updated = new ListNode (newItem, head); 
-            head.setValue(updated); 
-            size++;
-            return true;  
-        }//end else
+        ListNode apple = new ListNode(newItem, head); 
+        head = apple;
+        size++;
+        return true;  
     }//end addFirst()
 
 
-    /*
-     * public boolean add(Object newItem){
-        ListNode temp = head; 
-        if(temp.getValue()==null){
+    //adds a ListNode element to the end of the LinkedList, always returns true.
+    public boolean add(Object newItem){
+        if(head==null){
             addFirst(newItem);
             return true;
-        }
-        while(temp.getValue() != null){
-            if(temp.getNext()==null){
-                temp.setValue(newItem);
-                size++; 
-                return true; 
-            }//end if
-            else
-                temp = temp.getNext();
-        }//end while loop
-    return true; 
+        }//end if 
+        //create temp that points to head first value
+        ListNode temp = head; 
+        while(temp.getNext() != null){
+            temp=temp.getNext(); //moves pointer to next value
+        }//end while
+        ListNode coffee = new ListNode(newItem, null);
+        temp.setNext(coffee);
+        size++; 
+        return true; 
     }//end add()
-     */
+    
+    //adds a ListNode element to the end of the LinkedList
+    public boolean addLast(Object obj){
+        add(obj); 
+        return true;
+    }//end addLast()
      
     
     
