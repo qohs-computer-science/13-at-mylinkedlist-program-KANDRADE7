@@ -129,8 +129,6 @@ public class MyLinkedList
         return storedVal;
     }//end remove()
 
-
-
     //removes the ListNode element at the beginning of the LinkedList and returns the value of the node
     public Object removeFirst(){
         if(head == null)
@@ -153,6 +151,7 @@ public class MyLinkedList
         if(head.getNext() == null){
             Object gift = head.getValue();
             head = null;
+            size--; 
             return gift;
         }//end if
 
@@ -163,7 +162,7 @@ public class MyLinkedList
 
         Object pumpkin = temp.getValue();
         temp=null;
+        size--;
         return pumpkin;
     }//end removeLast()
-
 } //end class
