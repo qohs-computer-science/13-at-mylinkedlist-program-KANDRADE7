@@ -95,7 +95,7 @@ public class MyLinkedList
     }//end get()
     
     public Object remove(int i){
-        if(i<0 || i>size)
+        if(i<0 || i>=size)
             throw new IndexOutOfBoundsException();
         if(i==0)
             return removeFirst();
@@ -104,7 +104,7 @@ public class MyLinkedList
         ListNode before = null;
         int index =0;
 
-        while((temp!=null) && (temp.getNext()!=null) && (index < i - 1)){
+        while((temp!=null) && (temp.getNext()!=null) && (index < i)){
             before = temp;
             temp = temp.getNext();
             index++;

@@ -54,9 +54,8 @@ public class TestLinkedList
     Object removedA = apple.remove(4);
     Object removedB= apple.removeFirst();
     Object removedC = apple.removeLast();
-    Object removedD = apple.remove(8); 
 
-    System.out.println("\nValues that were removed: " + removedA + ", " + removedB + ", " + removedC + ", " + removedD);
+    System.out.println("\nValues that were removed: " + removedA + ", " + removedB + ", " + removedC);
 
     System.out.println("\nList AFTER removal:");
     System.out.println(apple.toString());
