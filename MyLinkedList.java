@@ -95,7 +95,7 @@ public class MyLinkedList
     }//end get()
     
     public Object remove(int i){
-        if(i<0 || i>=size)
+        if(i<0 || i>size)
             throw new IndexOutOfBoundsException();
         if(i==0)
             return removeFirst();
@@ -104,7 +104,7 @@ public class MyLinkedList
         ListNode before = null;
         int index =0;
 
-        while((temp!=null) && (temp.getNext()!=null) && (index < i)){
+        while((temp!=null) && (temp.getNext()!=null) && (index < i - 1)){
             before = temp;
             temp = temp.getNext();
             index++;
@@ -140,13 +140,15 @@ public class MyLinkedList
             return gift;
         }//end if
  
-        ListNode temp = head;
+        ListNode before = head;
+        ListNode temp = head.getNext();
         while(temp.getNext()!= null){
+            before = temp;
             temp=temp.getNext();
         }//end while loop
 
         Object pumpkin = temp.getValue();
-        temp=null;
+        before.setNext(null);
         size--;
         return pumpkin;
     }//end removeLast()
