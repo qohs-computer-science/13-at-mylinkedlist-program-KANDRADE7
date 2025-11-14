@@ -1,4 +1,4 @@
-//Katherine Andrade, 11/4/25, period 6
+//Katherine Andrade, 11/4/25, CP3 - Ms. Adams
 public class MyLinkedList
 {
 //fields

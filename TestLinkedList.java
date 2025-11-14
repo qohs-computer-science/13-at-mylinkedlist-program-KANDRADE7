@@ -1,5 +1,5 @@
 //My tester file 
-//Katherine Andrade, 11/13/14, period 6 cp3
+//Katherine Andrade, 11/13/14, CP3 - Ms. Adams
 public class TestLinkedList
 {
   public static void main(String [] args)
