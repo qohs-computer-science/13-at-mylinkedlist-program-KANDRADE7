@@ -98,7 +98,7 @@ public class MyLinkedList
         if(i<0 || i>=size)
             throw new IndexOutOfBoundsException();
         if(i==0)
-            return removeFirst();
+            return removeFirst(); 
 
         ListNode temp= head;
         ListNode before = null;
